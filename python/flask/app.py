@@ -1,5 +1,7 @@
 from flask import Flask, render_template,request
+from data import student
 app=Flask(__name__)
+getstudent=student()
 @app.route('/send',methods=['GET','POST'])
 def send():
     if(request.method=='POST'):
@@ -23,5 +25,8 @@ def about():
 @app.route('/contact')
 def contac():
     return render_template('contact.html')
+@app.route('/slist')
+def slist():
+    return render_template('slist.html',mylist=getstudent)
 if(__name__=='__main__'):
     app.run(debug=True)

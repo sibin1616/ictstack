@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block mycontent %}
+{% for a in edata %}
+<ul style="font-color:yellow">
+    <li>Name :{{a.name}}</li>
+    <li>Email :{{a.email}}</li>
+    <li>Employ Id :{{a.eid}}</li>
+    <li>Employ Salary :{{a.eslry}}</li>
+</ul>
+{% endfor %}
+{% endblock %}
